@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.features "Creating Home Page" do
+RSpec.feature "Creating Home Page" do
   
   scenario do
     visit '/'
