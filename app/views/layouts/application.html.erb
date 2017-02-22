@@ -3,18 +3,36 @@
   <head>
     <title>Workout</title>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+<!--
+    <= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+-->
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
-    
-    <%= render 'shared/header' %>
   
-    <%= render 'shared/main' %>
+    <div id="wrapper">
+  		
+  		<div id="header">
+  		  <%= render 'shared/header' %>
+  		</div>
+  		
+  		<div id="content">
+  		  <%= render 'shared/main' %>
+  		</div>
+  		
+  		<div id="footer">
+  		  <%= render 'shared/footer' %>
+  		</div>
+  		
+  	</div>
     
-    <%= render 'shared/footer' %>
+  
+    
+    
+    
     
   </body>
 </html>
