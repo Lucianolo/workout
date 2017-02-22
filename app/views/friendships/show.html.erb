@@ -24,12 +24,12 @@
   </table>
 
   <br>
-
+  <%= link_to 'Back', user_exercises_path(current_user),
+      class: "btn btn-success btn-lg link" %>
+  <br>
   <%= content_tag :div, "", id: "chart", data: {workouts: @exercises} %>
 
   <br>
 
-  <%= link_to 'Back', user_exercises_path(current_user),
-      class: "btn btn-success btn-lg link" %>
-
+  
 </div>
