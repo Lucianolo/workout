@@ -1,6 +1,6 @@
 $(document).ready(function() {
-  $('#exercise_workout_date').datepicker({ dateFormat: 'yy-mm-dd'});
-  
+  $('#exercise_workout_date').datepicker({ dateFormat: 'yy-mm-dd', minDate: -14, maxDate: 0});
+ 
   var regex = /(\/users\/\d+\/exercises$)|\/friendships\/d+$/i;
 
   if($(location).attr('pathname').match(regex)) {

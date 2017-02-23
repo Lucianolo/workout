@@ -8,6 +8,6 @@ class Exercise < ApplicationRecord
   validates :workout_details, presence: true
   validates :activity_date, presence: true
   
-  default_scope { where("workout_date > ?", 7.days.ago)
+  default_scope { where("workout_date > ?", 14.days.ago)
                   .order(workout_date: :desc) }
 end
