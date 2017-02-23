@@ -1,24 +1,31 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a web application developed during the Udemy curse "Ruby on Rails 5 - BDD, RSpec and Capybara".
 
-Things you may want to cover:
+Link to Preview: https://bdd-rails-lucianolo.c9users.io/
 
-* Ruby version
 
-* System dependencies
+Features: 
 
-* Configuration
+* Bootstrap design
 
-* Database creation
+* Users Login - Logout - Singup
 
-* Database initialization
+* Exercises CRUD model
 
-* How to run the test suite
+* Profile page to show/add exercises/workouts
 
-* Services (job queues, cache servers, search engines, etc.)
+* Following users
 
-* Deployment instructions
+* Users search feature
 
-* ...
+* Real-Time chat using ActionCable
+
+* Graph chart of users' workouts
+
+* More features coming..
+
+
+-----------------------------------
+
+All features are tested with RSpec.
