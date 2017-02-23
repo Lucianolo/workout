@@ -5,7 +5,7 @@ RSpec.feature "Listing exercise" do
   before do
     @john = User.create(first_name: "John", last_name: "Doe", email: "john@example.com", password: "password")
     @sarah = User.create(first_name: "Sarah", last_name: "Jones", email: "sarah@example.com", password: "password")
-    login_as(@john)
+    
     
     @e1 = @john.exercises.create( duration_in_min: 20,
                                   workout: "My body building activity",
