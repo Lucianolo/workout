@@ -8,6 +8,7 @@ body {
 	padding: 0;
 	height: 100%;
 	min-height: 100%;
+	font-family: 'Raleway', sans-serif;
 }
 
 #wrapper {
@@ -125,7 +126,7 @@ body {
 }
 // Chart Styling
 path {
-  stroke: steelblue; stroke-width: 2; fill: none;
+  stroke: orange; stroke-width: 2; fill: none;
 }
 .axis path, .axis line {
     fill: none;
@@ -134,12 +135,16 @@ path {
     shape-rendering: crispEdges;
 }
 #chat-window {
-  border: 1px solid #76C95B;
-  margin-top: 50px;
-  margin-bottom: 30px;
+  border: 1px solid orange;
+  margin-top: 80px;
+  margin-bottom: 10px;
+  padding: 0 0;
+}
+#chat-window .row {
+  
 }
 #chat-window header {
-  background: #76C95B;
+  background: orange;
   margin-left: -15px;
   margin-right: -15px;
   padding-top: 10px;
@@ -149,6 +154,7 @@ path {
 }
 #chat-box {
   min-height: 100px;
+  
 }
 #message-field {
   width: 96%;
@@ -167,8 +173,160 @@ hr.msg {
   margin-left: -15px;
 }
 #form-box {
-  margin-left: -15px;
+  //margin-left: -15px;
 }
 #post-btn {
   margin-right: -35px;
+}
+
+//CUSTOM CHATBOX
+
+
+#custom-search-input {
+  background: #e8e6e7 none repeat scroll 0 0;
+  margin: 0;
+  padding: 10px;
+}
+   #custom-search-input .search-query {
+   background: #fff none repeat scroll 0 0 !important;
+   border-radius: 4px;
+   height: 33px;
+   margin-bottom: 0;
+   padding-left: 7px;
+   padding-right: 7px;
+   }
+   #custom-search-input button {
+   background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+   border: 0 none;
+   border-radius: 3px;
+   color: #666666;
+   left: auto;
+   margin-bottom: 0;
+   margin-top: 7px;
+   padding: 2px 5px;
+   position: absolute;
+   right: 0;
+   z-index: 9999;
+   }
+   .search-query:focus + button {
+   z-index: 3;   
+   }
+  
+   .all_conversation ul li {
+   border-bottom: 1px solid #dddddd;
+   line-height: normal;
+   width: 100%;
+   }
+   .all_conversation ul li a:hover {
+   background: #dddddd none repeat scroll 0 0;
+   color:#333;
+   }
+   .all_conversation ul li a {
+  color: #333;
+  line-height: 30px;
+  padding: 3px 20px;
+}
+   .member_list .chat-body {
+   margin-left: 47px;
+   margin-top: 0;
+   }
+   .top_nav {
+   overflow: visible;
+   }
+   
+   .member_list li {
+   padding: 6px;
+   }
+   .member_list ul {
+   border: 1px solid #dddddd;
+   }
+   .chat-img img {
+   height: 34px;
+   width: 34px;
+   }
+   .member_list li {
+   border-bottom: 1px solid #dddddd;
+   padding: 6px;
+   }
+   .member_list li:last-child {
+   border-bottom:none;
+   }
+   .member_list {
+   height: 380px;
+   overflow-x: hidden;
+   overflow-y: auto;
+   }
+
+.all_conversation ul li:hover .sub_menu_ {
+  display: block;
+}
+
+.new_message_head {
+  background: #f5f3f3 none repeat scroll 0 0;
+  float: left;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 18px 10px;
+  width: 100%;
+}
+.message_section {
+  border: 1px solid #dddddd;
+}
+.chat_area {
+  float: left;
+  max-height: 250px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 100%;
+}
+.chat_area li {
+  padding: 14px 14px 0;
+}
+.chat_area li .chat-img1 img {
+  height: 40px;
+  width: 40px;
+}
+.chat_area .chat-body1 {
+  margin-left: 50px;
+}
+.chat-body1 p {
+  background: #fbf9fa none repeat scroll 0 0;
+  padding: 10px;
+}
+.chat_area .admin_chat .chat-body1 {
+  margin-left: 0;
+  margin-right: 50px;
+}
+.chat_area li:last-child {
+  padding-bottom: 10px;
+}
+.message_write {
+  background: #f5f3f3 none repeat scroll 0 0;
+  float: left;
+  padding: 15px;
+  width: 100%;
+}
+
+.message_write textarea.form-control {
+  height: 70px;
+  padding: 10px;
+}
+
+
+.sub_menu_ > li a, .sub_menu_ > li {
+  float: left;
+  width:100%;
+}
+.member_list li:hover {
+  background: #428bca none repeat scroll 0 0;
+  color: #fff !important;
+  cursor:pointer;
+}
+.member_list li:hover a{
+  color: #fff !important;
+}
+
+.chat_time {
+  font-size: .8em;
+  font-family: 'Roboto', sans-serif;
 }

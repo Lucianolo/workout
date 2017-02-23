@@ -1,0 +1,71 @@
+
+    <div class="chat_container col-md-12 " id="chat-window">
+      <div class="col-md-4 chat_sidebar">
+        <div class="row">
+          <div id="custom-search-input">
+            <div class="input-group">
+              <input type="text" class="  search-query form-control" placeholder="Conversation" />
+                <button class="btn btn-danger" type="button">
+                  <span class=" glyphicon glyphicon-search"></span>
+                </button>
+            </div>
+          </div>
+            
+          <div class="member_list">
+            <ul class="list-unstyled">
+              
+              <!-- INSERIRE QUI LISTA FOLLOWER -->
+              <% followers.each do |follower| %>
+                <li class="left clearfix">
+                  <span class="chat-img pull-left">
+                    <img src="https://lh6.googleusercontent.com/-y-MY2satK-E/AAAAAAAAAAI/AAAAAAAAAJU/ER_hFddBheQ/photo.jpg" alt="User Avatar" class="img-circle">
+                  </span>
+                  <div class="chat-body clearfix">
+                    <div class="header_sec">
+                      <strong class="primary-font">
+                        <%= link_to follower.user.full_name, user_exercises_path(current_user, roomId: follower.user.room.id) %>
+                        <br />
+                      </strong> 
+                      <p class="pull-right chat_time">
+                        <% time = follower.user.room.messages.last.created_at.to_s %>
+                        <%= time.split("-")[1]+"/"+time.split("-")[2].split(" ").first+" at: "+time.split(":")[0].split(" ").last+":"+time.split(":")[1] %>
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!--chat_sidebar-->
+      <div class="col-md-8 message_section" id="messages-box">
+        <header class="text-center">Channel: <%= current_room.name %></header>
+        <div class="row" >
+          
+          <div id="chat-box" class="chat_area" data-channel="rooms" data-room-id=<%= current_room.id %>>
+            <ul class="list-unstyled">
+              <% messages.each do |message| %>
+                <%= render partial: 'shared/message', locals: { message: message } %>
+              <% end %>
+            </ul>
+          </div>
+          
+          <div id="form-box" class="message_write">
+            <%= form_for @message, remote: true do |f| %>
+              <%= f.text_field :body, id: 'message-field', class: 'form-control pull-left' %>
+              <div class="clearfix"></div>
+              <%= f.submit 'Post', class: 'btn btn-default', id: 'post-btn' %>
+            <% end %>
+          </div>
+          
+        </div>
+      </div> <!--message_section-->
+    </div>
+  
+<script>
+  $('#post-btn').click(function (){
+  	var log = $('#chat-box');
+  	log.animate({ scrollTop: log.prop('scrollHeight')}, 1000);   
+  });
+</script>

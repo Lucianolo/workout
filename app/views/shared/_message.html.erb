@@ -1,4 +1,38 @@
-<div class="message-row">
-  <p class="message-body"><%= message.body %></p>
-  <span>"<small><%= message.user.full_name %></small>"</span>
-</div>
+
+    
+      
+      <% if message.user.id != current_user.id %>
+      
+        <li class="left clearfix">
+          <span class="chat-img1 pull-left">
+            <img src="https://lh6.googleusercontent.com/-y-MY2satK-E/AAAAAAAAAAI/AAAAAAAAAJU/ER_hFddBheQ/photo.jpg" alt="User Avatar" class="img-circle">
+          </span>
+          <div class="chat-body1 clearfix">
+            <p class="message-body"><%= message.body %></p>
+            <div class="chat_time pull-right">
+              <% time = message.created_at.to_s %>
+              <%= time.split("-")[1]+"/"+time.split("-")[2].split(" ").first+" at: "+time.split(":")[0].split(" ").last+":"+time.split(":")[1] %>
+            </div>
+          </div>
+        </li>
+        
+      <% else %>  
+      
+        <li class="left clearfix admin_chat">
+          <span class="chat-img1 pull-right">
+            <img src="https://lh6.googleusercontent.com/-y-MY2satK-E/AAAAAAAAAAI/AAAAAAAAAJU/ER_hFddBheQ/photo.jpg" alt="User Avatar" class="img-circle">
+          </span>
+          <div class="chat-body1 clearfix">
+            <p class="message-body text-right"><%= message.body %></p>
+            <div class="chat_time pull-left">
+              <% time = message.created_at.to_s %>
+              <%= time.split("-")[1]+"/"+time.split("-")[2].split(" ").first+" at: "+time.split(":")[0].split(" ").last+":"+time.split(":")[1] %>
+            </div>
+          </div>
+        </li>
+      
+      <% end %>
+      
+    
+    
+ 
